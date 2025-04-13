@@ -22,7 +22,13 @@ pipeline {
                 sh 'mvn clean compile'
             }
         }
-
+		stages {
+        stage('Test') {
+            steps {
+                echo 'Hello from Jenkins!'
+           		 }
+        	}
+  		  }
         stage('Run Tests') {
             steps {
                 sh 'mvn test'
