@@ -4,7 +4,7 @@ Feature: Login functionality
 		Given user is on login page
 		When user enters valid username and password
 		And user clicks login button
-		Then the user should be redirected to home page.
+		Then user should be redirected to home page
 	
 	
 	Scenario: error will come for invalid login credentials -- Negative scenario
