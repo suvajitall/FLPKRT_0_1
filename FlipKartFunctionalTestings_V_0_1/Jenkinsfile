@@ -14,12 +14,14 @@ pipeline {
         stage('Checkout') {
             steps {
                 git 'https://github.com/suvajitall/FLPKRT_FuntionalTest_v_0_1.git'
+                echo 'checkout!'
             }
         }
 
         stage('Build') {
             steps {
                 sh 'mvn clean compile'
+                echo 'Building'
             }
         }
 		stages {
@@ -32,6 +34,7 @@ pipeline {
         stage('Run Tests') {
             steps {
                 sh 'mvn test'
+                echo 'Running tests'
             }
         }
 
