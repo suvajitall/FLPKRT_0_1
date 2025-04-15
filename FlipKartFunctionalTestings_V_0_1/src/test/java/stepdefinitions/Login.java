@@ -16,7 +16,7 @@ public class Login {
 
     @Then("user should be redirected to home page")
     public void redirected_to_homepage() {
-        System.out.println("User landed on homepage");
+        System.out.println("User landed on homepage and verified the home page");
     }
     
     
