@@ -2,53 +2,48 @@ pipeline {
     agent any
 
     tools {
-        maven 'Maven 3.9.9' // Or the name of your Maven installation in Jenkins
-        jdk 'JDK 11'        // Or whatever version you use
-    }
-
-    environment {
-        // Optional: set environment variables if needed
+        maven 'Maven 3.9.9' // Make sure this name matches your Jenkins config
+        jdk 'JDK 11'        // Same here
     }
 
     stages {
         stage('Checkout') {
             steps {
                 git 'https://github.com/suvajitall/FLPKRT_FuntionalTest_v_0_1.git'
-                echo 'checkout!'
+                echo 'Checkout complete'
             }
         }
 
         stage('Build') {
             steps {
                 sh 'mvn clean compile'
-                echo 'Building'
+                echo 'Build complete'
             }
         }
-		stages {
+
         stage('Test') {
             steps {
                 echo 'Hello from Jenkins!'
-           		 }
-        	}
-  		  }
+            }
+        }
+
         stage('Run Tests') {
             steps {
                 sh 'mvn test'
-                echo 'Running tests'
+                echo 'Tests executed'
             }
         }
 
         stage('Generate Reports') {
             steps {
-                // If using cucumber-reporting plugin, or similar
                 sh 'mvn verify'
+                echo 'Reports generated'
             }
         }
     }
 
     post {
         always {
-            // Archive test reports, e.g., cucumber.json or HTML
             junit 'target/surefire-reports/*.xml'
             archiveArtifacts artifacts: 'target/**/*.html', allowEmptyArchive: true
         }
