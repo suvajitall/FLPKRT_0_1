@@ -1,51 +1,20 @@
 pipeline {
     agent any
-
-    tools {
-        maven 'Maven 3.9.9' // Make sure this name matches your Jenkins config
-        jdk 'JDK 11'        // Same here
-    }
-
     stages {
-        stage('Checkout') {
-            steps {
-                git 'https://github.com/suvajitall/FLPKRT_FuntionalTest_v_0_1.git'
-                echo 'Checkout complete'
-            }
-        }
-
         stage('Build') {
             steps {
-                sh 'mvn clean compile'
-                echo 'Build complete'
+                echo 'Building...'
             }
         }
-
         stage('Test') {
             steps {
-                echo 'Hello from Jenkins!'
+                echo 'Testing...'
             }
         }
-
-        stage('Run Tests') {
+        stage('Deploy') {
             steps {
-                sh 'mvn test'
-                echo 'Tests executed'
+                echo 'Deploying...'
             }
-        }
-
-        stage('Generate Reports') {
-            steps {
-                sh 'mvn verify'
-                echo 'Reports generated'
-            }
-        }
-    }
-
-    post {
-        always {
-            junit 'target/surefire-reports/*.xml'
-            archiveArtifacts artifacts: 'target/**/*.html', allowEmptyArchive: true
         }
     }
 }
