@@ -1,12 +1,52 @@
 package stepdefinitions;
+import org.openqa.selenium.WebDriver;
+import java.io.File;
+import java.io.IOException;
+import java.security.Timestamp;
+import java.sql.Date;
+import java.sql.Time;
+import java.time.Duration;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.Random;
+
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.testng.Assert;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
+
+
 
 import io.cucumber.java.en.*;
+import pages.LoginPage;
+import runner.TestRunner;
 
+import org.codehaus.plexus.util.FileUtils;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 public class Login {
-
+	WebDriver driver = TestRunner.driver;
+	public static String getCurrentDateTime() {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyyMMdd_HHmmss");
+        return LocalDateTime.now().format(formatter);
+    }
     @Given("user is on login page")
-    public void user_on_login_page() {
-        System.out.println("Navigating to login page");
+    public void user_on_login_page() throws IOException {
+       //System.out.println("Navigating to login page");
+    	
+    	String page_title = driver.getTitle();
+    	//Assert.assertEquals("Online Shopping Site for Mobiles, Electronics, Furniture, Grocery, Lifestyle, Books & More. Best Offers!", page_title);
+    	String timestamp = Login.getCurrentDateTime();
+    	LoginPage page = new LoginPage(driver);
+    	page.click_login_icon();
+    	driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+    	TakesScreenshot src = (TakesScreenshot)driver;
+    	File src_sht = src.getScreenshotAs(OutputType.FILE);
+    	File dest_file = new File("screenshots/Login/"+timestamp+".png");
+    	FileUtils.copyFile(src_sht, dest_file);
+    	
+    	
     }
 
     @When("user enters valid username and password")
@@ -35,4 +75,6 @@ public class Login {
         
     	 System.out.println("error comes for invalid credentials");
     }
+    
+
 }
