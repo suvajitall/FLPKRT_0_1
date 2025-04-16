@@ -26,7 +26,7 @@ public class TestRunner extends AbstractTestNGCucumberTests{
 	public static void chromeBrowserInitializtion() {
 		System.setProperty("webdriver.chrome.driver", "drivers/chromedriver.exe");
 		ChromeOptions opt = new ChromeOptions();
-		opt.addArguments1("--headless=new");
+		opt.addArguments("--headless=new");
 		opt.addArguments("--disable-gpu");
 		opt.addArguments("--window-size=1920,1080");
 	    driver = new ChromeDriver(opt);

@@ -1,20 +1,29 @@
 pipeline {
     agent any
+
+    tools {
+        maven 'Maven 4.0.0'      // Use your Maven installation name from Jenkins
+        jdk 'JDK 21'             // Use your JDK installation name from Jenkins
+    }
+
     stages {
-        stage('Build') {
+        stage('Checkout') {
             steps {
-                echo 'Building...'
+                git 'https://github.com/suvajitall/FLPKRT_0_1.git' // Your Git repo
             }
         }
-        stage('Test') {
+
+        stage('Build & Test') {
             steps {
-                echo 'Testing...'
+                sh 'mvn clean test'
             }
         }
-        stage('Deploy') {
-            steps {
-                echo 'Deployed...'
-            }
+    }
+
+    post {
+        always {
+            archiveArtifacts artifacts: 'target/**/*.png', fingerprint: true
+            junit 'target/surefire-reports/*.xml'
         }
     }
 }
