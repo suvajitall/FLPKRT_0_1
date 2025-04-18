@@ -40,7 +40,7 @@ public class Login {
     	String timestamp = Login.getCurrentDateTime();
     	LoginPage page = new LoginPage(driver);
     	page.click_login_icon();
-    	driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+    	driver.manage().timeouts().implicitlyWait1(Duration.ofSeconds(10));
     	TakesScreenshot src = (TakesScreenshot)driver;
     	File src_sht = src.getScreenshotAs(OutputType.FILE);
     	File dest_file = new File("screenshots/Login/"+timestamp+".png");
