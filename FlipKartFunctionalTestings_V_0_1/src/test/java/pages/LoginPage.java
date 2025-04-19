@@ -20,5 +20,24 @@ public class LoginPage {
 		loginButton.click();
 	}
 	
+	@FindBy(xpath="//form[@autocomplete='on']/div/input[@type='text']")
+	WebElement emailPhoneNumberIput;
+	
+	@FindBy(xpath="//form[@autocomplete='on']/div/button")
+	WebElement otpButton;
+	
+	public void enter_email_phoneNumber(String email_phoneNumber) {
+		emailPhoneNumberIput.sendKeys(email_phoneNumber);
+		//otpButton.click();
+		
+	}
+	
+	@FindBy(xpath="//button[contains(text(),'Verify')]")
+	WebElement verifyButton;
+	
+	public void verifyOtp() {
+		verifyButton.click();
+	}
+	
 
 }

@@ -33,34 +33,53 @@ public class Login {
     }
     @Given("user is on login page")
     public void user_on_login_page() throws IOException {
-       //System.out.println("Navigating to login page");
-    	
-    	String page_title = driver.getTitle();
-    	//Assert.assertEquals("Online Shopping Site for Mobiles, Electronics, Furniture, Grocery, Lifestyle, Books & More. Best Offers!", page_title);
     	String timestamp = Login.getCurrentDateTime();
-    	LoginPage page = new LoginPage(driver);
-    	page.click_login_icon();
+    	driver.get("https://www.flipkart.com/");
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+		
+    	String page_title = driver.getTitle();
     	driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
     	TakesScreenshot src = (TakesScreenshot)driver;
     	File src_sht = src.getScreenshotAs(OutputType.FILE);
     	File dest_file = new File("screenshots/Login/"+timestamp+".png");
     	FileUtils.copyFile(src_sht, dest_file);
     	
-    	
+    }
+    @And("user clicks login button")
+    public void user_clicks_login_button() {
+     
+    	 System.out.println("user clicks login button");
     }
 
-    @When("user enters valid username and password")
-    public void user_enters_credentials() {
-        System.out.println("Entering username and password");
+    @When("user enters valid email or contact")
+    public void user_enters_credentials() throws IOException {
+    	String timestamp = Login.getCurrentDateTime();
+    	LoginPage page = new LoginPage(driver);
+    	page.click_login_icon();
+    	driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+    	page.enter_email_phoneNumber("9038338072");
+    	TakesScreenshot src = (TakesScreenshot)driver;
+    	File src_sht = src.getScreenshotAs(OutputType.FILE);
+    	File dest_file = new File("screenshots/Login/"+timestamp+".png");
+    	FileUtils.copyFile(src_sht, dest_file);
+    	
+    	
+    	driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+    	//page.verifyOtp();
+    	//driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+    	TakesScreenshot src1 = (TakesScreenshot)driver;
+    	
+    	
     }
 
     @Then("user should be redirected to home page")
     public void redirected_to_homepage() {
-        System.out.println("User landed on homepage and verified the home page");
+        String expectedUrl = "https://www.flipkart.com/account/login?ret=/";
+        Assert.assertEquals(expectedUrl, driver.getCurrentUrl());
     }
     
     
-    @When("user enters invalid username and password")
+   /* @When("user enters invalid username and password")
     public void user_enters_invalid_username_and_password() {
        
     	 System.out.println("user enters invalid username and password");
@@ -74,7 +93,7 @@ public class Login {
     public void error_comes_for_invalid_credentials() {
         
     	 System.out.println("error comes for invalid credentials");
-    }
+    }*/
     
 
 }

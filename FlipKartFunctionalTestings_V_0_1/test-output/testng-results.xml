@@ -1,31 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-04-17T01:39:54 IST" name="Funtional testing" finished-at="2025-04-17T01:40:14 IST" duration-ms="20324">
+  <suite started-at="2025-04-19T15:46:15 IST" name="Funtional testing" finished-at="2025-04-19T15:46:35 IST" duration-ms="20432">
     <groups>
       <group name="cucumber">
         <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@4a668b6e]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test started-at="2025-04-17T01:39:54 IST" name="Login funtionalities" finished-at="2025-04-17T01:40:14 IST" duration-ms="20324">
+    <test started-at="2025-04-19T15:46:15 IST" name="Login funtionalities" finished-at="2025-04-19T15:46:35 IST" duration-ms="20432">
       <class name="runner.TestRunner">
-        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:runner.TestRunner@4a668b6e]" started-at="2025-04-17T01:39:54 IST" name="setUpClass" finished-at="2025-04-17T01:39:54 IST" duration-ms="839" status="PASS">
+        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:runner.TestRunner@4a668b6e]" started-at="2025-04-19T15:46:15 IST" name="setUpClass" finished-at="2025-04-19T15:46:16 IST" duration-ms="870" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@32f0c7f8]]>
+                <![CDATA[org.testng.TestRunner@174e1b69]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method is-config="true" signature="chromeBrowserInitializtion()[pri:0, instance:runner.TestRunner@4a668b6e]" started-at="2025-04-17T01:39:54 IST" name="chromeBrowserInitializtion" finished-at="2025-04-17T01:39:59 IST" duration-ms="4628" status="PASS">
+        <test-method is-config="true" signature="chromeBrowserInitializtion()[pri:0, instance:runner.TestRunner@4a668b6e]" started-at="2025-04-19T15:46:16 IST" name="chromeBrowserInitializtion" finished-at="2025-04-19T15:46:18 IST" duration-ms="1800" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- chromeBrowserInitializtion -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@4a668b6e]" started-at="2025-04-17T01:39:59 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-04-17T01:40:02 IST" duration-ms="3346" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@4a668b6e]" started-at="2025-04-19T15:46:18 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-04-19T15:46:25 IST" duration-ms="7317" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -41,27 +41,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@4a668b6e]" started-at="2025-04-17T01:40:02 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-04-17T01:40:03 IST" duration-ms="439" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA["error will come for invalid login credentials -- Negative scenario"]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA["Login functionality"]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:runner.TestRunner@4a668b6e]" started-at="2025-04-17T01:40:03 IST" name="closeBrowser" finished-at="2025-04-17T01:40:14 IST" duration-ms="10964" status="PASS">
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:runner.TestRunner@4a668b6e]" started-at="2025-04-19T15:46:25 IST" name="closeBrowser" finished-at="2025-04-19T15:46:35 IST" duration-ms="10312" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:runner.TestRunner@4a668b6e]" started-at="2025-04-17T01:40:14 IST" name="tearDownClass" finished-at="2025-04-17T01:40:14 IST" duration-ms="36" status="PASS">
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:runner.TestRunner@4a668b6e]" started-at="2025-04-19T15:46:35 IST" name="tearDownClass" finished-at="2025-04-19T15:46:35 IST" duration-ms="52" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->
