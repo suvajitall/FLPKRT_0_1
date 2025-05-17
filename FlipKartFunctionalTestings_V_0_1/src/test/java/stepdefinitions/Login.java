@@ -19,6 +19,7 @@ import org.testng.annotations.BeforeClass;
 
 
 import io.cucumber.java.en.*;
+import pages.HomePage;
 import pages.LoginPage;
 import runner.TestRunner;
 
@@ -35,10 +36,7 @@ public class Login {
     public void user_on_login_page() throws IOException {
     	String timestamp = Login.getCurrentDateTime();
     	driver.get("https://www.flipkart.com/");
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
-		
-    	String page_title = driver.getTitle();
-    	driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+    	driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
     	TakesScreenshot src = (TakesScreenshot)driver;
     	File src_sht = src.getScreenshotAs(OutputType.FILE);
     	File dest_file = new File("screenshots/Login/"+timestamp+".png");
@@ -56,18 +54,16 @@ public class Login {
     	String timestamp = Login.getCurrentDateTime();
     	LoginPage page = new LoginPage(driver);
     	page.click_login_icon();
-    	driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+    	driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
     	page.enter_email_phoneNumber("9038338072");
     	TakesScreenshot src = (TakesScreenshot)driver;
     	File src_sht = src.getScreenshotAs(OutputType.FILE);
     	File dest_file = new File("screenshots/Login/"+timestamp+".png");
     	FileUtils.copyFile(src_sht, dest_file);
-    	
-    	
     	driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
     	//page.verifyOtp();
     	//driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-    	TakesScreenshot src1 = (TakesScreenshot)driver;
+    	//TakesScreenshot src1 = (TakesScreenshot)driver;
     	
     	
     }
@@ -94,6 +90,34 @@ public class Login {
         
     	 System.out.println("error comes for invalid credentials");
     }*/
+    
+    
+    @When("user clicks on the appliance option in dashboard")
+    public void user_clicks_on_the_appliance_option_in_dashboard() {
+        // Write code here that turns the phrase above into concrete actions
+    	HomePage page = new HomePage(driver);
+    	page.click_appliance_option();
+    }
+    @When("user is redirected to appliance page")
+    public void user_is_redirected_to_appliance_page() {
+        // Write code here that turns the phrase above into concrete actions
+        
+    }
+    @Then("user clicks the banner")
+    public void user_clicks_the_banner() throws IOException {
+        // Write code here that turns the phrase above into concrete actions
+    	String timestamp = Login.getCurrentDateTime();
+    	HomePage hmpg = new HomePage(driver);
+    	hmpg.clickBanner();
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(60));
+    	TakesScreenshot src = (TakesScreenshot)driver;
+    	File src_sht = src.getScreenshotAs(OutputType.FILE);
+    	File dest_file = new File("screenshots/Login/"+timestamp+".png");
+    	FileUtils.copyFile(src_sht, dest_file);
+    	
+    }
+
+
     
 
 }

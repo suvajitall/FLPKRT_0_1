@@ -9,7 +9,7 @@
           <include name="closeBrowser"/>
           <include name="setUpClass"/>
           <include name="tearDownClass"/>
-          <include name="runScenario" invocation-numbers="0"/>
+          <include name="runScenario" invocation-numbers="1"/>
         </methods>
       </class> <!-- runner.TestRunner -->
     </classes>

@@ -1,55 +1,71 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-04-19T15:46:15 IST" name="Funtional testing" finished-at="2025-04-19T15:46:35 IST" duration-ms="20432">
+  <suite started-at="2025-05-17T21:08:35 IST" name="Default suite" finished-at="2025-05-17T21:09:10 IST" duration-ms="34953">
     <groups>
       <group name="cucumber">
-        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@4a668b6e]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
+        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@2525ff7e]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test started-at="2025-04-19T15:46:15 IST" name="Login funtionalities" finished-at="2025-04-19T15:46:35 IST" duration-ms="20432">
+    <test started-at="2025-05-17T21:08:35 IST" name="Default test" finished-at="2025-05-17T21:09:10 IST" duration-ms="34953">
       <class name="runner.TestRunner">
-        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:runner.TestRunner@4a668b6e]" started-at="2025-04-19T15:46:15 IST" name="setUpClass" finished-at="2025-04-19T15:46:16 IST" duration-ms="870" status="PASS">
+        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:runner.TestRunner@2525ff7e]" started-at="2025-05-17T21:08:35 IST" name="setUpClass" finished-at="2025-05-17T21:08:37 IST" duration-ms="1221" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@174e1b69]]>
+                <![CDATA[org.testng.TestRunner@4833eff3]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method is-config="true" signature="chromeBrowserInitializtion()[pri:0, instance:runner.TestRunner@4a668b6e]" started-at="2025-04-19T15:46:16 IST" name="chromeBrowserInitializtion" finished-at="2025-04-19T15:46:18 IST" duration-ms="1800" status="PASS">
+        <test-method is-config="true" signature="chromeBrowserInitializtion()[pri:0, instance:runner.TestRunner@2525ff7e]" started-at="2025-05-17T21:08:37 IST" name="chromeBrowserInitializtion" finished-at="2025-05-17T21:08:39 IST" duration-ms="1990" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- chromeBrowserInitializtion -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@4a668b6e]" started-at="2025-04-19T15:46:18 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-04-19T15:46:25 IST" duration-ms="7317" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@2525ff7e]" started-at="2025-05-17T21:08:39 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-05-17T21:08:48 IST" duration-ms="9841" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA["successful login with valid username and password -- Happy path scenario."]]>
+                <![CDATA["Click the appliance option and then banner of appliance page"]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA["Login functionality"]]>
+                <![CDATA["Opening the applicance page"]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:runner.TestRunner@4a668b6e]" started-at="2025-04-19T15:46:25 IST" name="closeBrowser" finished-at="2025-04-19T15:46:35 IST" duration-ms="10312" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@2525ff7e]" started-at="2025-05-17T21:08:48 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-05-17T21:08:59 IST" duration-ms="10754" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Filter functionalities -- price"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Opening the applicance page"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:runner.TestRunner@2525ff7e]" started-at="2025-05-17T21:08:59 IST" name="closeBrowser" finished-at="2025-05-17T21:09:10 IST" duration-ms="10445" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:runner.TestRunner@4a668b6e]" started-at="2025-04-19T15:46:35 IST" name="tearDownClass" finished-at="2025-04-19T15:46:35 IST" duration-ms="52" status="PASS">
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:runner.TestRunner@2525ff7e]" started-at="2025-05-17T21:09:10 IST" name="tearDownClass" finished-at="2025-05-17T21:09:10 IST" duration-ms="579" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->
       </class> <!-- runner.TestRunner -->
-    </test> <!-- Login funtionalities -->
-  </suite> <!-- Funtional testing -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>
